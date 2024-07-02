@@ -1,6 +1,6 @@
 import {} from 'react'
 
-function LandingBottom() {
+function BottomSection() {
   return (
     <section className='flex bg-[rgba(5,25,45,1)] text-white items-center justify-center gap-6 flex-col min-h-[calc(80svh)] h-fit py-6 px-5 text-center'>
         <h1 className='text-6xl gochi leading-[70px] max-w-[730px]'>INTERESTED IN JOINING OUR NEXT COHORT</h1>
@@ -10,4 +10,4 @@ function LandingBottom() {
   )
 }
 
-export default LandingBottom
+export default BottomSection

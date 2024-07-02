@@ -1,14 +1,14 @@
 import {} from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/codexlogo.png'
 
 function Navbar() {
   return (
     <header className="">
-      <nav className="h-[80px] bg-white text-black inter flex items-center justify-between px-">
-        <img src={logo} alt="logo" />
-        <ul className='flex items-center justify-between'>
-          <li><NavLink to="/">For Schools</NavLink></li>
+      <nav className="h-[80px] bg-white text-black inter flex items-center justify-between pl-[3%] pr-[5%]">
+        <Link to="/"><img src={logo} alt="logo" /></Link>
+        <ul className='flex items-center justify-between w-[580px]'>
+          <li><NavLink to="for-secondary-schools">For Schools</NavLink></li>
           <li><NavLink to="/">Testimonials</NavLink></li>
           <li><NavLink to="/">FAQ</NavLink></li>
           <li><NavLink to="/">Community</NavLink></li>

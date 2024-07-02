@@ -1,6 +1,7 @@
 import {} from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import BottomSection from '../components/BottomSection'
 
 function RootLayout() {
   return (
@@ -9,6 +10,7 @@ function RootLayout() {
         <div>
             <Outlet />
         </div>
+        <BottomSection />
     </div>
   )
 }

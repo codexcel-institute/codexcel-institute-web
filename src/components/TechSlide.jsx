@@ -13,41 +13,41 @@ import { SiMicrosoftazure } from 'react-icons/si'
 function TechSlide() {
 
   return (
-    <Marquee velocity={85} className="flex items-center px-7">
-        <p className="flex items-center gap-[2px] mr-3">
-            <i><FaPython /></i><span>Python</span>
+    <Marquee velocity={85} className="flex items-center px-7 text-5xl">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
+            <i className='text-3xl'><FaPython /></i><span>Python</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><RiJavascriptFill /></i><span>JavaScript</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><TbBrandMysql /></i><span>MySql</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
-            <img src={gpt} alt="" className='w-4'/><span>ChatGPT</span>
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
+            <img src={gpt} alt="" className='w-8'/><span>ChatGPT</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><HiOutlineChartBarSquare /></i><span>Power BI</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><IoLogoTableau /></i><span>Tableau</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><RiFileExcel2Fill /></i><span></span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><IoLogoDocker /></i><span>docker</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><TbBrandDatabricks /></i><span>databricks</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><GiSnowflake1 /></i><span>snowflake</span>
         </p>
-        <p className="flex items-center gap-[2px] mr-3">
+        <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i><SiMicrosoftazure /></i><span>Azure</span>
         </p>
-        <p className="flex items-center gap-[2px]">
+        <p className="flex items-center gap-[2px] text-3xl mr-7">
             <i><FaGitAlt /></i><span>git</span>
         </p>
     </Marquee>
