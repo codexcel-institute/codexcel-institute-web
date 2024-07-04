@@ -1,3 +1,5 @@
+import {} from 'react'
+
 const Offer = () => {
     return ( 
         <div className="w-full min-h-[100vh] py-[50px]">
