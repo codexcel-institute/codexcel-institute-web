@@ -27,3 +27,97 @@ p {
 .texting{
   font-family: "sequel", sans-serif;
 }
+
+.nav-links{
+  border: 2px solid rgba(52,168,83,1);
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@media(max-width:500px){
+  .tech{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+  }
+
+  .learn{
+    font-size: 17px;
+  }
+
+  .img{
+    width: 15px;
+    height: 15px;
+  }
+
+  .grids{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px;
+  }
+
+  .logo{
+    margin-right: 100px;
+  }
+
+  .pad h1{
+    font-size: 35px;
+  }
+
+  .tech-text{
+    font-size: 50px;
+  }
+
+  .offer{
+    font-size: 40px;
+  }
+
+  .footer h1{
+    font-size: 50px;
+  }
+
+  .nav-links{
+    height: 50vh;
+  }
+}
+
+@media(max-width:395px){
+  .span{
+    margin-left: 15px;
+  }
+}
+
+@media(max-width:376px){
+  .tech img{
+    height: 400px;
+  }
+
+  .logo{
+    margin-right: 50px;
+  }
+}
+
+@media(max-width:365px){
+  .process{
+    min-height: 85vh;
+  }
+
+  .process > div {
+    height: 60vh;
+  }
+
+  .nav-links{
+    top: 140px;
+    height: 60vh;
+  }
+}
