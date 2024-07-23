@@ -8,9 +8,11 @@ function Testimonials() {
   return (
     <main>
         <TestimonialsTop />
-        <Best />
-        <Splendid />
-        <WhoWeAre />
+        <div className='px-5 lg:px-12'>
+          <Best />
+          <Splendid />
+          <WhoWeAre />
+        </div>
     </main>
   )
 }
