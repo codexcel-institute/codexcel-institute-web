@@ -13,7 +13,7 @@ import { SiMicrosoftazure } from 'react-icons/si'
 function TechSlide() {
 
   return (
-    <Marquee velocity={85} className="flex items-center px-7 text-5xl">
+    <Marquee velocity={30} className="flex items-center px-7 text-5xl">
         <p className="flex items-center gap-[2px] mr-7 text-3xl">
             <i className='text-3xl'><FaPython /></i><span>Python</span>
         </p>

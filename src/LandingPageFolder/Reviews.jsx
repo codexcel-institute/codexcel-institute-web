@@ -6,8 +6,8 @@ import { wrap } from 'popmotion'
 import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci'
 
 const reviews = [
-    {imgSrc: user1, header: 'BEST INSTITUTE EVER', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Akinola Kehinde"},
-    {imgSrc: user2, header: 'Life Saver', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Joe Ntekim"}
+    {imgSrc: user1, header: 'BEST INSTITUTE EVER', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Akinola Kehinde", career: "Fullstack Developer"},
+    {imgSrc: user2, header: 'Life Saver', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Joe Ntekim", career: "Fullstack Developer"}
 
 ]
 
@@ -47,10 +47,10 @@ function Reviews() {
         setPage([page + newDirection, newDirection]);
     };
   return (
-    <div className='carousel-container overflow-x-hidden'>
-        <AnimatePresence initial={false} custom={direction} className='border border-red-600'>
+    <div className='carousel-container h-[600px] md:h-[400px] lg:h-screen overflow-x-hidden'>
+        <AnimatePresence initial={false} custom={direction} className=''>
         <motion.div
-          className=' flex w-full px-16 gap-8 absolute'
+          className='flex flex-col md:flex-row w-full items-center lg:items-stretch px-4 md:px-16 gap-8 absolute'
           key={page}
           src={reviews[imageIndex].imgSrc}
           custom={direction}
@@ -75,13 +75,19 @@ function Reviews() {
             }
           }}
         >
-            <img src={reviews[imageIndex].imgSrc} className='w-1/2 min-h-[400px] h-[400px]' alt="" />
-            <div className='w-1/2 flex flex-col'>
-                <h1 className='text-[60px] text-[rgba(5,25,45,1)] gochi'>{reviews[imageIndex].header}</h1>
-                <p>{reviews[imageIndex].review}</p>
-                <p>{reviews[imageIndex].author}</p>
+            <img src={reviews[imageIndex].imgSrc} className='w-[200px] h-[200px] rounded-full lg:rounded-none lg:w-1/2 lg:min-h-[400px] lg:h-[400px]' alt="" />
+            <div className='md:w-8/12 lg:w-1/2 flex flex-col lg:justify-between'>
+                <div>
+                  <h1 className='text-3xl lg:text-5xl xl:text-[60px] text-[rgba(5,25,45,1)] gochi'>{reviews[imageIndex].header}</h1>
+                  <p>{reviews[imageIndex].review}</p>
+                </div>
 
-                <div className="mt-auto flex gap-2 items-center text-4xl">
+                <div className='mt-5 md:mt-0'>
+                  <p>{reviews[imageIndex].author}</p>
+                  <p>{reviews[imageIndex].career}</p>
+                </div>
+
+                <div className="mt-8 lg:mt-aut flex gap-2 items-center text-4xl">
                   <div className="next cursor-pointer hover:" onClick={() => paginate(1)}>
                       <CiCircleChevLeft />
                   </div>
