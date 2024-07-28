@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "formik": "^2.4.6",
     "framer-motion": "^11.2.12",
     "popmotion": "^11.0.5",
     "react": "^18.3.1",
@@ -19,7 +20,8 @@
     "react-marquee-slider": "^1.1.5",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.24.0",
-    "react-simple-typewriter": "^5.0.1"
+    "react-simple-typewriter": "^5.0.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
