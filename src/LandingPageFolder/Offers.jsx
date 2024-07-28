@@ -16,28 +16,28 @@ function Offers() {
             <li className="flex items-center gap-5">
               <div className='min-w-11 h-11 bg-[#00FF44]'></div>
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-4xl mb-2">Learn anywhere</h1>
+                <h1 className="text-3xl md:text-3xl lg:text-3xl mb-2">Learn anywhere</h1>
                 <p>Why go to a lecture hall when you can learn from home, by the beach, at the recording studio or at your shop?</p>
               </div>
             </li>
             <li className="flex items-center gap-5">
               <div className='min-w-11 h-11 bg-[#00FF44]'></div>
               <div>
-                <h1 className="text-4xl mb-2">Learn from the Best</h1>
+                <h1 className="text-3xl mb-2">Learn from the Best</h1>
                 <p>At <span className='gochi text-2xl ml-1'>code</span><span className='text-[#00FF44] gochi text-2xl mr-1'>xcel</span>, we pride ourselves on having a team of instructors who are exceptionally experienced and highly knowledgeable in their respective fields. Their expertise and dedication ensure that you receive the highest quality education and mentorship available.</p>
               </div>
             </li>
             <li className="flex items-center gap-5">
               <div className='min-w-11 h-11 bg-[#00FF44]'></div>
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-4xl">Life Time Mentorship</h1>
+                <h1 className="text-3xl md:text-3xl lg:text-3xl">Life Time Mentorship</h1>
                 <p>Enrolling in any course with our institute will provide you with access to our lifetime mentorship program, CV building services, and career advancement opportunities.</p>
               </div>
             </li>
             <li className="flex items-center gap-5">
               <div className='min-w-11 h-11 bg-[#00FF44]'></div>
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-4xl">Updated and Diligently Researched Curriculum</h1>
+                <h1 className="text-3xl md:text-3xl lg:text-3xl">Updated and Diligently Researched Curriculum</h1>
                 <p>Our curriculum is meticulously researched and designed to align with the latest trends and advancements in the field. We continually update our course content to ensure it remains relevant and cutting-edge, providing our students with the most current knowledge and skills needed to excel in their chosen field.</p>
               </div>
             </li>

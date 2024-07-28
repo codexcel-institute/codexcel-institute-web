@@ -1,9 +1,13 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/codexlogo.png'
 import Links from './Menu'
+import { FormContext } from './Context'
 
 function Navbar() {
+
+  const {openForm} = useContext(FormContext)
+
   const [displayMenu, setDisplayMenu] = useState(false); 
 
     function toggleNav(){
@@ -18,12 +22,12 @@ function Navbar() {
         <Link to="/"><img className='logo mr-[270px] md:mr-0' src={logo} alt="logo" /></Link>
         <ul className='flex items-center justify-between w-auto md:w-[580px]'>
           <ul className='hidden md:flex items-center justify-between w-[330px] md:w-[400px]'>
-            <li><NavLink to="for-secondary-schools">For Schools</NavLink></li>
-            <li><NavLink to="testimonials">Testimonials</NavLink></li>
-            <li><NavLink to="/">FAQ</NavLink></li>
-            <li><NavLink to="/">Community</NavLink></li>
+            <li className='nav-link'><NavLink to="for-secondary-schools">For Schools</NavLink></li>
+            <li className='nav-link'><NavLink to="testimonials">Testimonials</NavLink></li>
+            <li className='nav-link'><NavLink to="faqs">FAQ</NavLink></li>
+            <li className='nav-link'><NavLink to="community">Community</NavLink></li>
           </ul>
-          <li><NavLink to="/"><button className="bg-[rgba(52,168,83,1)] text-white w-36 h-12 rounded-md font-semibold">Apply Now</button></NavLink></li>
+          <li><button className="bg-[rgba(52,168,83,1)] text-white w-36 h-12 rounded-md font-semibold" onClick={() => openForm()}>Apply Now</button></li>
         </ul>
 
 

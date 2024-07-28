@@ -1,7 +1,9 @@
-import {} from 'react'
+import { useContext } from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import { FormContext } from '../components/Context'
 
 function Top() {
+  const {openForm} = useContext(FormContext)
   const { "0" : text} = useTypewriter({
     words: ['SOFTWARE ENGINEER', 'PRODUCT DESIGNER', 'DATA ANALYST'],
     loop: {},
@@ -18,7 +20,7 @@ function Top() {
         </h1>
         <h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl gochi'>IN 6 MONTHS</h1>
         <p className='max-w-[715px] text-center mb-3'>CodeXcel is an immersive software engineering experience that produces industry-ready software engineers within 6 months.</p>
-        <button className="rounded-[100px] bg-[rgba(0,255,68,1)] w-[174px] h-[52px] hover:scale-110">APPLY NOW</button>
+        <button className="rounded-[100px] bg-[rgba(0,255,68,1)] w-[174px] h-[52px] hover:scale-110" onClick={() => openForm()}>APPLY NOW</button>
     </section>
   )
 }

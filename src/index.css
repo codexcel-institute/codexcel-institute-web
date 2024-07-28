@@ -121,3 +121,21 @@ p {
     height: 60vh;
   }
 }
+
+
+.active {
+  color: rgba(52,168,83,1);
+}
+
+.nav-link:hover {
+  color: rgba(52,168,83,1);
+}
+
+#form::-webkit-scrollbar {
+  display: none;
+}
+
+#form {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
