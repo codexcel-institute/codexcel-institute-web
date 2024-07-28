@@ -8,11 +8,13 @@ import * as Yup from 'yup'
 
 function ApplicationForm() {
 
+    const [selectedCourse, setSelectedCourse] = useState('')
+    const [selectedCourseError, setSelectedCourseError] = useState('')
     const formik = useFormik({
         initialValues: {
             firstname: '',
             lastname: '',
-            course: '',
+            course: selectedCourse,
             phone: '',
             email: '' 
         },
@@ -25,14 +27,16 @@ function ApplicationForm() {
         }),
         validateOnChange: false,
         onSubmit: (values) => {
+            if(!selectedCourse){
+                setSelectedCourseError('you have to select a course');
+                return
+            }
           sendEmail()
+          setSelectedCourseError('')
         },
       });
 
     const { displayForm, closeForm } = useContext(FormContext)
-
-    
-    const [selectedCourse, setSelectedCourse] = useState('')
 
     const courses = ["Web Development", "UI/UX", "Data Science", "Cyber Security"]
     const [displayCourses, setDisplayCourses] = useState(false)
@@ -54,6 +58,8 @@ function ApplicationForm() {
           closeForm()
           setDisableBtn(false)
           formik.resetForm()
+          setSelectedCourse('')
+          setSelectedCourseError('')
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -74,6 +80,7 @@ function ApplicationForm() {
                 <input
                     type="text"
                     name="firstname"
+                    placeholder='Firstname'
                     id=""
                     value={formik.values.firstname}
                     onChange={formik.handleChange}
@@ -86,6 +93,7 @@ function ApplicationForm() {
                 <input
                     type="text"
                     name="lastname"
+                    placeholder='Lastname'
                     value={formik.values.lastname}
                     onChange={formik.handleChange}
                     id="" className="w-full border border-[rgba(229,225,218,1)] px-4 rounded-[4px] h-11" />
@@ -98,6 +106,7 @@ function ApplicationForm() {
                     type="text"
                     name="phone"
                     id=""
+                    placeholder='Phone'
                     value={formik.values.phone}
                     onChange={formik.handleChange}
                     className="w-full border border-[rgba(229,225,218,1)] px-4 rounded-[4px] h-11" />
@@ -110,7 +119,7 @@ function ApplicationForm() {
                     e.stopPropagation()
                     setDisplayCourses(prev => !prev)
                 }}>
-                    <div>{selectedCourse ? selectedCourse : 'Select Course'}</div>
+                    <div>{selectedCourse ? selectedCourse : <span className='opacity-50'>Select Course</span>}</div>
                     <div className={`absolute z-30 left-0 top-[44px] bg-white shadow-xl w-full rounded-md ${displayCourses ? 'h-[150px] duration-300 delay-150 transition-all ease-in-out' : 'h-0' } overflow-hidden`}>
                         {
                             courses.map((course, i) => (
@@ -125,11 +134,10 @@ function ApplicationForm() {
                         name="course"
                         id=""
                         value={selectedCourse}
-                        // value={formik.values.username}
                         className='hidden'
                     />
                 </div>
-                {/* {formik.errors.course && <span>{formik.errors.course}</span>} */}
+                {selectedCourseError && <span className='text-sm text-red-600'>{selectedCourseError}</span>}
             </div>
 
             <div className='mb-4'>
@@ -138,6 +146,7 @@ function ApplicationForm() {
                     type="text"
                     name="email"
                     id=""
+                    placeholder='Email'
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     className="w-full border border-[rgba(229,225,218,1)] px-4 rounded-[4px] h-11"
