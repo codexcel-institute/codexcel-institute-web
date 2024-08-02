@@ -69,7 +69,7 @@ function ApplicationForm() {
 
   return (
     <section className={`fixed z-[999] flex items-center justify-center ${displayForm ? 'top-0' : 'top-[-100vh]'} left-0 w-full h-screen backdrop-brightness-75`} onClick={() => closeForm()}>
-        <form ref={form} onSubmit={formik.handleSubmit} id='form' action="" className={`bg-white border border-[rgb(229,225,218)] w-10/12 max-w-[450px] px-5 rounded-[4px] py-4 overflow-y-scroll h-screen max-h-[600px] ${displayForm ? 'scale-100 transition-all duration-300 delay-300 ease-in-out' : 'scale-0'}`} onClick={(e) => {
+        <form ref={form} onSubmit={formik.handleSubmit} id='form' action="" className={`bg-white border border-[rgb(229,225,218)] w-10/12 max-w-[450px] px-5 rounded-[4px] py-4 overflow-y-scroll h-fit max-h-[98vh] md:h-screen md:max-h-[600px] ${displayForm ? 'scale-100 transition-all duration-300 delay-300 ease-in-out' : 'scale-0'}`} onClick={(e) => {
             e.stopPropagation()
             setDisplayCourses(false)
         }}>
