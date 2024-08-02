@@ -11,7 +11,7 @@ function Top() {
     deleteSpeed: 100
   }) 
   return (
-    <section className="flex bg-[rgba(5,25,45,1)] text-white items-center flex-col gap-4 min-h-[calc(70svh-80px)] lg:min-h-[calc(100svh-80px)] h-fit py-6 px-5 text-center">
+    <section className="flex bg-[rgba(5,25,45,1)] text-white items-center flex-col gap-4 h-[calc(70svh-80px)] md:min-h-[430px] lg:min-h-[calc(100svh-80px)] py-6 px-5 text-center">
         <p className='text-lg mb-6'>START YOUR CAREER IN TECH</p>
         <h1 className='text-3xl md:text-4xl lg:text-5xl xl:text-6xl gochi xl:leading-[70px]'>
             <span>BECOME A </span>
