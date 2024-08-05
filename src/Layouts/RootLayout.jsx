@@ -4,12 +4,19 @@ import Navbar from '../components/Navbar'
 import BottomSection from '../components/BottomSection'
 import ApplicationForm from '../components/ApplicationForm'
 import { FormProvider } from '../components/Context'
+import { Toaster } from 'react-hot-toast'
 
 function RootLayout() {
   
   return (
     <div className='inter'>
       <FormProvider>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          duration: 4000,
+        }}></Toaster>
           <ApplicationForm />
           <Navbar />
           <div>

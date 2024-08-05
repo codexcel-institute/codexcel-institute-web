@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import { ImSpinner11 } from 'react-icons/im';
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
+import toast from 'react-hot-toast';
 
 function ApplicationForm() {
 
@@ -60,6 +61,7 @@ function ApplicationForm() {
           formik.resetForm()
           setSelectedCourse('')
           setSelectedCourseError('')
+          toast.success("Application submitted successfully")
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -69,6 +71,7 @@ function ApplicationForm() {
 
   return (
     <section className={`fixed z-[999] flex items-center justify-center ${displayForm ? 'top-0' : 'top-[-100vh]'} left-0 w-full h-screen backdrop-brightness-75`} onClick={() => closeForm()}>
+        
         <form ref={form} onSubmit={formik.handleSubmit} id='form' action="" className={`bg-white border border-[rgb(229,225,218)] w-10/12 max-w-[450px] px-5 rounded-[4px] py-4 overflow-y-scroll h-fit max-h-[98vh] md:h-screen md:max-h-[600px] ${displayForm ? 'scale-100 transition-all duration-300 delay-300 ease-in-out' : 'scale-0'}`} onClick={(e) => {
             e.stopPropagation()
             setDisplayCourses(false)
