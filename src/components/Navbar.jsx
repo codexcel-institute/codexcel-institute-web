@@ -1,19 +1,39 @@
-import {useContext, useState} from 'react'
+import { useContext, useState, useRef, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/codexlogo.png'
 import Links from './Menu'
 import { FormContext } from './Context'
 
 function Navbar() {
-
   const {openForm} = useContext(FormContext)
 
   const [displayMenu, setDisplayMenu] = useState(false); 
+  const menuRef = useRef(null);
 
-    function toggleNav(){
-        setDisplayMenu(prev => !prev)
-        console.log('my menu')
+
+  function toggleNav(){
+    setDisplayMenu(prev => !prev)
+  }
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setDisplayMenu(false)
     }
+  }
+
+  useEffect(() => {
+    if (displayMenu){
+      document.addEventListener('mousedown', handleClickOutside);
+    }else{
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    };
+  }, [displayMenu]);
+
+
 
   return (
     <header className="">
@@ -31,7 +51,10 @@ function Navbar() {
         </ul>
 
 
-        <Links displayMenu={displayMenu}/>
+        {/* Pass ref to the Links component */}
+        <div ref={menuRef}>
+          <Links displayMenu={displayMenu} />
+        </div>      
       </nav>
     </header>
   )
