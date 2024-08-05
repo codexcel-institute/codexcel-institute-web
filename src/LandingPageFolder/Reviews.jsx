@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import user1 from "../assets/user1.png"
 import user2 from "../assets/user2.png"
+import kolapo from "../assets/kolapo.jpeg"
 import { wrap } from 'popmotion'
 import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci'
+import { FaLinkedin } from 'react-icons/fa'
 
 const reviews = [
+  {imgSrc: kolapo, header: 'BEST INSTITUTE EVER', review: 'Amazing learning experience! The instructors are not only experts in their fields but also great mentors. The supportive community and resources available made the learning process enjoyable and effective.', author: "Kolapo Owoade", career: "Google certified UI/UX designer", link: "https://www.linkedin.com/in/kolapo-owoade-b1bba8221/"},
     {imgSrc: user1, header: 'BEST INSTITUTE EVER', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Akinola Kehinde", career: "Fullstack Developer"},
     {imgSrc: user2, header: 'Life Saver', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Joe Ntekim", career: "Fullstack Developer"}
 
@@ -85,6 +88,7 @@ function Reviews() {
                 <div className='mt-5 md:mt-0'>
                   <p>{reviews[imageIndex].author}</p>
                   <p>{reviews[imageIndex].career}</p>
+                  <a href={reviews[imageIndex].link}><FaLinkedin /></a>
                 </div>
 
                 <div className="mt-8 lg:mt-aut flex gap-2 items-center text-4xl">
@@ -104,3 +108,46 @@ function Reviews() {
 }
 
 export default Reviews
+
+
+
+
+// John D.
+// Rating: ★★★★★
+// "Joining this coding institute was the best decision I ever made! The instructors are knowledgeable and supportive, and the curriculum is top-notch. I've gained so much confidence in my coding skills."
+
+// Sarah M.
+// Rating: ★★★★★
+// "This institute exceeded my expectations! The hands-on projects and real-world applications of the concepts we learned have prepared me for a successful career in tech. Highly recommended!"
+
+// Emily R.
+// Rating: ★★★★★
+// "Amazing learning experience! The instructors are not only experts in their fields but also great mentors. The supportive community and resources available made the learning process enjoyable and effective."
+
+// Michael B.
+// Rating: ★★★★★
+// "I can't say enough good things about this coding institute. The curriculum is comprehensive and up-to-date, covering all the latest technologies. The career support services were invaluable in helping me land my first job in tech."
+
+// Jessica T.
+// Rating: ★★★★★
+// "The coding institute has transformed my career. The bootcamp-style courses are intense but incredibly rewarding. The skills I acquired here gave me a competitive edge in the job market."
+
+// David H.
+// Rating: ★★★★★
+// "Exceptional learning environment! The instructors are passionate about teaching, and the course content is relevant and practical. I appreciated the focus on both theoretical knowledge and practical skills."
+
+// Amanda L.
+// Rating: ★★★★★
+// "From beginner to confident coder, this institute has been with me every step of the way. The curriculum is well-structured, and the projects are challenging but manageable. Great experience overall!"
+
+// Chris P.
+// Rating: ★★★★★
+// "Highly recommend this coding institute for anyone serious about a career in tech. The faculty is outstanding, and the support system for students is excellent. I felt well-prepared for my job search after graduation."
+
+// Rebecca S.
+// Rating: ★★★★★
+// "Fantastic institute! The courses are well-organized, and the learning platform is user-friendly. The mentors and peer support have been crucial in my learning journey. I'm grateful for the experience and the skills I've gained."
+
+// Mark J.
+// Rating: ★★★★★
+// "The best decision I made for my career was enrolling here. The blend of theory and hands-on practice is perfect. The instructors are approachable and always ready to help. I now feel confident in my coding abilities and ready to take on new challenges."
