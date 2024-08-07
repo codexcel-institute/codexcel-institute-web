@@ -15,6 +15,7 @@ function Navbar() {
     setDisplayMenu(prev => !prev)
   }
 
+
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setDisplayMenu(false)
@@ -53,7 +54,7 @@ function Navbar() {
 
         {/* Pass ref to the Links component */}
         <div ref={menuRef}>
-          <Links displayMenu={displayMenu} />
+          <Links displayMenu={displayMenu} setDisplayMenu={setDisplayMenu} />
         </div>      
       </nav>
     </header>
