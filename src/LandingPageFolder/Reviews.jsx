@@ -3,16 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import user1 from "../assets/user1.png"
 import user2 from "../assets/user2.png"
 import kolapo from "../assets/kolapo.jpeg"
+import folarin from "../assets/folarin.jpeg"
 import { wrap } from 'popmotion'
 import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci'
 import { FaLinkedin } from 'react-icons/fa'
 
 const reviews = [
-  {imgSrc: kolapo, header: 'BEST INSTITUTE EVER', review: 'Amazing learning experience! The instructors are not only experts in their fields but also great mentors. The supportive community and resources available made the learning process enjoyable and effective.', author: "Kolapo Owoade", career: "Google certified UI/UX designer", link: "https://www.linkedin.com/in/kolapo-owoade-b1bba8221/"},
+  {imgSrc: folarin, header: 'BEST INSTITUTE EVER', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Folarin Folarin", career: "Senior Product Designer, Engineer", link: "https://www.linkedin.com/in/folafolarin/"},
+  {imgSrc: kolapo, header: 'AMAZING LEARNING EXPERIENCE', review: 'Amazing learning experience! The instructors are not only experts in their fields but also great mentors. The supportive community and resources available made the learning process enjoyable and effective.', author: "Kolapo Owoade", career: "Google certified UI/UX designer", link: "https://www.linkedin.com/in/kolapo-owoade-b1bba8221/"},
     {imgSrc: user1, header: 'BEST INSTITUTE EVER', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Akinola Kehinde", career: "Fullstack Developer"},
     {imgSrc: user2, header: 'Life Saver', review: 'This is where dreams come to life. With our carefully crafted learning courses we will meet you where you are, and take you to where you want to be in your career.', author: "Joe Ntekim", career: "Fullstack Developer"}
 
 ]
+
+
 
 const variants = {
     enter: (direction) => {
@@ -88,7 +92,7 @@ function Reviews() {
                 <div className='mt-5 md:mt-0'>
                   <p>{reviews[imageIndex].author}</p>
                   <p>{reviews[imageIndex].career}</p>
-                  <a href={reviews[imageIndex].link}><FaLinkedin /></a>
+                  <a className='flex items-center text-blue-600' href={reviews[imageIndex].link}>Linked<FaLinkedin /></a>
                 </div>
 
                 <div className="mt-8 lg:mt-aut flex gap-2 items-center text-4xl">
