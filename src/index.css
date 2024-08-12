@@ -28,9 +28,12 @@ p {
   font-family: "sequel", sans-serif;
 }
 
-.nav-links{
-  border: 2px solid rgba(52,168,83,1);
+.nav-menu-parent{
   animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+.nav-menu-parent .child {
+  border: 2px solid rgba(52,168,83,1);
 }
 
 @keyframes myAnim {
@@ -116,8 +119,8 @@ p {
     height: 60vh;
   }
 
-  .nav-links{
-    top: 140px;
+  .child{
+    /* top: 140px; */
     height: 60vh;
   }
 }

@@ -2,11 +2,14 @@ import { } from 'react'
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
+import { FormProvider } from './components/Context'
 
 function App() {
 
   return (
-    <RouterProvider router={router} />
+    <FormProvider>
+      <RouterProvider router={router} />
+    </FormProvider>
   )
 }
 

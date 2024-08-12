@@ -12,50 +12,48 @@ function Navbar() {
 
 
   function toggleNav(){
+    if(!displayMenu)
     setDisplayMenu(prev => !prev)
   }
 
 
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setDisplayMenu(false)
-    }
-  }
+  // const handleClickOutside = (event) => {
+  //   if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //     setDisplayMenu(false)
+  //   }
+  // }
 
-  useEffect(() => {
-    if (displayMenu){
-      document.addEventListener('mousedown', handleClickOutside);
-    }else{
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
+  // useEffect(() => {
+  //   if (displayMenu){
+  //     document.addEventListener('mousedown', handleClickOutside);
+  //   }else{
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   }
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    };
-  }, [displayMenu]);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside)
+  //   };
+  // }, [displayMenu]);
 
 
 
   return (
     <header className="">
-      <nav className="h-[80px] bg-white text-black inter flex  items-center justify-between pl-[3%] pr-[3%] md:pr-[4%] relative">
-        <span onClick={toggleNav} className='text-[25px] block md:hidden' id="openHam">&#9776;</span>
-        <Link to="/"><img className='logo mr-[270px] md:mr-0' src={logo} alt="logo" /></Link>
-        <ul className='flex items-center justify-between w-auto md:w-[75%] lg:w-[70%]'>
-          <ul className='hidden md:flex items-center justify-between w-[330px] md:w-[400px]'>
+      <nav className="h-[80px] bg-white text-black inter flex  items-center md:justify-between pl-[3%] pr-[3%] md:pr-[4%] fixed top-0 left-0 w-full z-[40] shadow-xl">
+        <span onClick={toggleNav} className='text-[25px] block md:hidden cursor-pointer mr-2' id="openHam">&#9776;</span>
+        <Link to="/" className=''><img className='logo md:mr-0' src={logo} alt="logo" /></Link>
+          <ul className='hidden md:flex items-center justify-between md:w-[400px] lg:w-[480px]'>
             <li className='nav-link'><NavLink to="for-secondary-schools">For Schools</NavLink></li>
             <li className='nav-link'><NavLink to="testimonials">Testimonials</NavLink></li>
             <li className='nav-link'><NavLink to="faqs">FAQ</NavLink></li>
             <li className='nav-link'><NavLink to="community">Community</NavLink></li>
           </ul>
-          <li><button className="bg-[rgba(52,168,83,1)] text-white ml-auto w-36 h-12 rounded-md font-semibold" onClick={() => openForm()}>Apply Now</button></li>
-        </ul>
-
+          
+        <button className="bg-[rgba(52,168,83,1)] text-white w-36 h-12 rounded-md ml-auto md:ml-0 font-semibold" onClick={() => openForm()}>Apply Now</button>
 
         {/* Pass ref to the Links component */}
-        <div ref={menuRef}>
-          <Links displayMenu={displayMenu} setDisplayMenu={setDisplayMenu} />
-        </div>      
+        {/* <div className={`${displayMenu ? '' : ''} md:hidden`} ref={menuRef}> */}
+          <Links displayMenu={displayMenu} setDisplayMenu={setDisplayMenu} />     
       </nav>
     </header>
   )
