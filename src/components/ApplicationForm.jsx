@@ -157,7 +157,7 @@ function ApplicationForm() {
                 {formik.errors.email && <span className='text-sm text-red-600'>{formik.errors.email}</span>}
             </div>
 
-            <div className="relative border">
+            <div className="relative">
                 <button disabled={disableBtn} type='submit'  className="w-full h-11 bg-[rgba(3,239,98,1)] rounded-[4px] font-bold">Submit</button>
                 <i id='spin' className={`absolute left-1/2 top-[20%] ${disableBtn ? 'block' : 'hidden'} text-white -translate-y-1/2 -translate-x-1/2 text-2xl`}>
                 <ImSpinner11 /></i>
