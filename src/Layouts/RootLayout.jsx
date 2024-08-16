@@ -11,7 +11,7 @@ function RootLayout() {
   const { displayForm } = useContext(FormContext)
   
   return (
-    <div className={`inter pt-[80px] ${displayForm ? 'h-screen overflow-y-hidden' : ''}`}>
+    <div className={`inter pt-[80px]`}>
       
       <Toaster
         position="top-center"

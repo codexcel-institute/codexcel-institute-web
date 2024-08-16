@@ -1,15 +1,27 @@
-import {React} from "react";
+import { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FormContext } from "./Context";
 
 export default function Links({ displayMenu, setDisplayMenu }){
     const closeMenu = () => {
         setDisplayMenu(false);
     };
 
-    if (!displayMenu) {
-        return null;
-    }
+    const { displayForm } = useContext(FormContext)
 
+    useEffect(() => {
+        if(displayForm){
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+      }, [displayForm])
+
+    // if (!displayMenu) {
+    //     return null;
+    // }
+
+    
 
     return(
 

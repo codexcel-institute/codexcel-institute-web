@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { FormContext } from './Context'
 import { IoMdClose } from 'react-icons/io'
 import emailjs from '@emailjs/browser';
@@ -68,6 +68,14 @@ function ApplicationForm() {
         },
       );
   };
+
+  useEffect(() => {
+    if(displayForm){
+        document.body.style.overflow = 'hidden'
+    } else {
+        document.body.style.overflow = 'unset'
+    }
+  }, [displayForm])
 
   return (
     <section className={`fixed z-[999] flex items-center justify-center ${displayForm ? 'top-0' : 'top-[-100vh]'} left-0 w-full h-screen backdrop-brightness-75`} onClick={() => closeForm()}>
